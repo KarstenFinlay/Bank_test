@@ -4,4 +4,8 @@ class Bank
     "You withdrew £#{money}"
   end
 
+  def deposit(money)
+    "You deposited £#{money}"
+  end
+
 end
