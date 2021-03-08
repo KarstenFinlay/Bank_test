@@ -14,7 +14,7 @@ describe Bank do
 
   describe "#deposit" do
     it 'deposits £10' do
-      expect(subject.deposit(10)).to eq "You deposited £10"
+      expect(subject.deposit(10)).to eq "You deposited £10, your current balance is £10"
     end
   end
 

@@ -13,7 +13,8 @@ class Bank
   end
 
   def deposit(money)
-    "You deposited £#{money}"
+    @balance += money
+    "You deposited £#{money}, your current balance is £#{balance}"
   end
 
 end
