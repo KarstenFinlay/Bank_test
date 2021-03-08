@@ -9,6 +9,7 @@ class Bank
   end
 
   def withdraw(money)
+    fail "Insufficient funds" if balance - money < 0
     @balance -= money
     "You withdrew £#{money}, your current balance is £#{balance}"
   end

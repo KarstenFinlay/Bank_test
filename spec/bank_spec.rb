@@ -15,6 +15,10 @@ describe Bank do
     it 'withdraws £10' do
       expect(subject.withdraw(10)).to eq "You withdrew £10, your current balance is £0"
     end
+
+    it "gives an error if the user tries to withdraw money that they don't have" do
+      expect{ subject.withdraw(20) }.to raise_error("Insufficient funds")
+    end
   end
 
   describe "#deposit" do
