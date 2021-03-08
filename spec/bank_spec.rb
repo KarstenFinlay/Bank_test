@@ -13,7 +13,7 @@ describe Bank do
     end
 
     it 'withdraws £10' do
-      expect(subject.withdraw(10)).to eq "You withdrew £10, your current balance is £0"
+      expect(subject.withdraw(10)).to eq "You withdrew £10 at #{subject.time.strftime("%d/%m/%Y")}, your current balance is £0"
     end
 
     it "gives an error if the user tries to withdraw money that they don't have" do
@@ -23,7 +23,7 @@ describe Bank do
 
   describe "#deposit" do
     it 'deposits £10' do
-      expect(subject.deposit(10)).to eq "You deposited £10, your current balance is £10"
+      expect(subject.deposit(10)).to eq "You deposited £10 at #{subject.time.strftime("%d/%m/%Y")}, your current balance is £10"
     end
   end
 
