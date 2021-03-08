@@ -7,8 +7,13 @@ describe Bank do
   end
 
   describe "#withdraw" do
+
+    before :each do
+      subject.deposit(10)
+    end
+
     it 'withdraws £10' do
-      expect(subject.withdraw(10)).to eq "You withdrew £10"
+      expect(subject.withdraw(10)).to eq "You withdrew £10, your current balance is £0"
     end
   end
 

@@ -9,7 +9,8 @@ class Bank
   end
 
   def withdraw(money)
-    "You withdrew £#{money}"
+    @balance -= money
+    "You withdrew £#{money}, your current balance is £#{balance}"
   end
 
   def deposit(money)
