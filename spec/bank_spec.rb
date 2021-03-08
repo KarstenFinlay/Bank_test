@@ -27,4 +27,16 @@ describe Bank do
     end
   end
 
+  describe "#bank_statement" do
+    it "Prints out bank statement" do
+      subject.deposit(1000)
+      subject.deposit(2000)
+      subject.withdraw(500)
+      expect(subject.bank_statement).to eq "date || credit || debit || balance\n
+      #{subject.time.strftime("%d/%m/%Y")} || || 500.00 || 2500.00\n
+      #{subject.time.strftime("%d/%m/%Y")} || 2000.00 || || 3000.00\n
+      #{subject.time.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00"
+    end
+  end
+
 end
