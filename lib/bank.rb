@@ -13,20 +13,18 @@ class Bank
   def withdraw(money)
     fail "Insufficient funds" if balance - money < 0
     @balance -= money
-    @statement.push("#{@time.strftime("%d/%m/%Y")} || #{money} || ")
-    "You withdrew £#{money} at #{@time.strftime("%d/%m/%Y")}, your current balance is £#{balance}"
+    @statement.push("#{@time.strftime("%d/%m/%Y")} || || £#{'%.2f' % money} || £#{'%.2f' % balance}")
+    "You withdrew £#{'%.2f' % money} at #{@time.strftime("%d/%m/%Y")}, your current balance is £#{'%.2f' % balance}"
   end
 
   def deposit(money)
     @balance += money
-    "You deposited £#{money} at #{@time.strftime("%d/%m/%Y")}, your current balance is £#{balance}"
+    @statement.push("#{@time.strftime("%d/%m/%Y")} || £#{'%.2f' % money} || || £#{'%.2f' % balance}")
+    "You deposited £#{'%.2f' % money} at #{@time.strftime("%d/%m/%Y")}, your current balance is £#{'%.2f' % balance}"
   end
 
   def bank_statement
-    return "date || credit || debit || balance\n
-      #{@time.strftime("%d/%m/%Y")} || || 500.00 || 2500.00\n
-      #{@time.strftime("%d/%m/%Y")} || 2000.00 || || 3000.00\n
-      #{@time.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00"
+    @statement.reverse.join("\n")
   end
 
 end
