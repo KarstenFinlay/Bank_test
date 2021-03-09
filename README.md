@@ -1,4 +1,4 @@
-# Bank
+# Bank_tech_test
 
 Simple app that allows the user to deposit money, withdraw money and can print out a bankstatement to an account, used in irb.
 
@@ -26,4 +26,14 @@ I want a warning that tells me I can't withdraw money I don't have.
 As a customer
 So that I can see how much money I am spending/saving.
 I want to be able to see a list of my withdraws and deposits.
+```
+
+## How to use Bank_tech_test:
+
+Fork this repo, and then ```git clone``` the repo.
+
+Then really simple, just use this line of code:
+
+```
+irb -r ./lib/bank.rb
 ```

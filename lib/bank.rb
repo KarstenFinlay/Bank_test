@@ -56,13 +56,4 @@ class Bank
     @readable_money = "#{'%.2f' % money}"
     @readable_balance = "#{'%.2f' % balance}"
   end
-
-  def table_creator
-    row = []
-    @statement.map do |value|
-      row.push(value.join(' || '))
-    end
-    row.join("\n")
-  end
-
 end
