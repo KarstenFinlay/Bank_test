@@ -13,18 +13,14 @@ class Bank
 
   def withdraw(money)
     raise 'Insufficient funds' if debit(money).negative?
-    @readable_time = @time.strftime('%d/%m/%Y')
-    @readable_money = "#{'%.2f' % money}"
-    @readable_balance = "#{'%.2f' % balance}"
+    making_values_easy_to_read(money, @balance)
     @statement.push("#{@readable_time} || || £#{@readable_money} || £#{@readable_balance}")
     withdraw_message
   end
 
   def deposit(money)
     credit(money)
-    @readable_time = @time.strftime('%d/%m/%Y')
-    @readable_money = "#{'%.2f' % money}"
-    @readable_balance = "#{'%.2f' % balance}"
+    making_values_easy_to_read(money, @balance)
     @statement.push("#{@readable_time} || £#{@readable_money} || || £#{@readable_balance}")
     deposit_message
   end
@@ -53,6 +49,20 @@ class Bank
 
   def deposit_message
     "You deposited £#{@readable_money} at #{@readable_time}, your current balance is £#{@readable_balance}"
+  end
+
+  def making_values_easy_to_read(money, balance)
+    @readable_time = @time.strftime('%d/%m/%Y')
+    @readable_money = "#{'%.2f' % money}"
+    @readable_balance = "#{'%.2f' % balance}"
+  end
+
+  def table_creator
+    row = []
+    @statement.map do |value|
+      row.push(value.join(' || '))
+    end
+    row.join("\n")
   end
 
 end
