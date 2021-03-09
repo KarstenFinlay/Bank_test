@@ -32,6 +32,12 @@ I want to be able to see a list of my withdraws and deposits.
 
 Fork this repo, and then ```git clone``` the repo.
 
+run
+
+```
+bundle install
+```
+
 Then really simple, just use this line of code:
 
 ```
