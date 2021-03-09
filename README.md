@@ -37,3 +37,24 @@ Then really simple, just use this line of code:
 ```
 irb -r ./lib/bank.rb
 ```
+Commands that you can use:
+
+```
+withdraw(NUMBER)
+```
+```
+deposit(NUMBER)
+```
+```
+bank_statement()
+```
+
+## Things I need to improve:
+
+I didn't refactor early enough, this has left me with one class that does everything, which is not very neat. It gets the job done, but is very inefficient. 
+
+I also need to plan much more before diving straight into it, as seen by my commit history, user stories were added far too late.
+
+I don't think my tests were very good as well, while always having 100% coverage, I think that my tests weren't testing behaviour which is a problem.
+
+I also need to get in the swing of making my Readmes earlier on, rather than leaving them to the end. 
