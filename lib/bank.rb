@@ -24,6 +24,7 @@ class Bank
   end
 
   def bank_statement
+    @statement << "date || credit || debit || balance"
     @statement.reverse.join("\n")
   end
 
