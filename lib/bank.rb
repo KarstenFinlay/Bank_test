@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Bank class
 class Bank
   attr_reader :balance, :time, :statement
 
@@ -27,7 +28,7 @@ class Bank
   end
 
   def bank_statement
-    statement = @statement << 'date || credit || debit || balance'
+    @statement << 'date || credit || debit || balance'
     statement = @statement.reverse.join("\n")
     puts statement
     @statement.pop
@@ -54,7 +55,7 @@ class Bank
 
   def making_values_easy_to_read(money, balance)
     @readable_time = @time.strftime('%d/%m/%Y')
-    @readable_money = ('%.2f' % money).to_s
-    @readable_balance = ('%.2f' % balance).to_s
+    @readable_money = format('%.2f', money).to_s
+    @readable_balance = format('%.2f', balance).to_s
   end
 end
