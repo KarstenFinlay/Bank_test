@@ -13,6 +13,7 @@ class Bank
 
   def withdraw(money)
     raise 'Insufficient funds' if debit(money).negative?
+
     making_values_easy_to_read(money, @balance)
     @statement.push("#{@readable_time} || || £#{@readable_money} || £#{@readable_balance}")
     withdraw_message
@@ -33,7 +34,7 @@ class Bank
     statement
   end
 
-  private 
+  private
 
   def debit(amount)
     @balance -= amount
@@ -53,7 +54,7 @@ class Bank
 
   def making_values_easy_to_read(money, balance)
     @readable_time = @time.strftime('%d/%m/%Y')
-    @readable_money = "#{'%.2f' % money}"
-    @readable_balance = "#{'%.2f' % balance}"
+    @readable_money = ('%.2f' % money).to_s
+    @readable_balance = ('%.2f' % balance).to_s
   end
 end
